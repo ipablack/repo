@@ -1,1 +1,27 @@
-
+{
+  "name": "XSIGN",
+  "identifier": "Xsign",
+  "subtitle": "سورس xsign الرسمي",
+  "description": "تطبيقات وألعاب xsign",
+  "sourceURL": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json",
+  "repo_revision_id": 1,
+  "apps": [],
+  "news": [],
+  "categories": [],
+  "xsign_config": {
+    "app_control": {
+      "core_sources": [
+        {
+          "name": "المكتبة الأساسية",
+          "id": "xsign.core.primary",
+          "url": "https://supapi.trystore.net/rest/v1/plus_library_apps"
+        },
+        {
+          "name": "XSIGN",
+          "id": "xsign.core.owned",
+          "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
+        }
+      ]
+    }
+  }
+}
