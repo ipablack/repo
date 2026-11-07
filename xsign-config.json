@@ -5,11 +5,11 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 5,
+  "repo_revision_id": 6,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
-      "animation_style": "neon_pulse",
+      "animation_style": "apple_minimal",
       "show_sign_feather": false,
       "duration_seconds": 3.2,
       "custom_code": "",
