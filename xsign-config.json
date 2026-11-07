@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 3,
+  "repo_revision_id": 4,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -60,22 +60,27 @@
           "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
         },
         {
-          "name": "متجر بلس",
+          "name": "ipasoon",
           "id": "xsign.core.primary",
-          "url": "https://supapi.trystore.net/rest/v1/plus_library_apps"
+          "url": "https://appiraq.com/source.php?action=getAll"
+        },
+        {
+          "name": "متجر Zsign الرسمي",
+          "id": "xsign.core.zsign",
+          "url": "https://appiraq.com/han.json"
         }
       ]
     },
     "dashboard": {
       "schema_version": 2,
-      "allow_user_sources": true,
+      "allow_user_sources": false,
       "signing_enabled": true,
       "tab_order": [
         "today",
-        "apps",
         "games",
-        "search",
-        "library"
+        "apps",
+        "library",
+        "search"
       ],
       "sources": [
         {
@@ -86,11 +91,18 @@
           "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
         },
         {
-          "enabled": true,
-          "format": "auto",
           "id": "xsign.core.primary",
-          "name": "متجر بلس",
-          "url": "https://supapi.trystore.net/rest/v1/plus_library_apps"
+          "name": "ipasoon",
+          "url": "https://appiraq.com/source.php?action=getAll",
+          "enabled": true,
+          "format": "auto"
+        },
+        {
+          "id": "xsign.core.zsign",
+          "name": "متجر Zsign الرسمي",
+          "url": "https://appiraq.com/han.json",
+          "enabled": true,
+          "format": "auto"
         }
       ],
       "sections": [
@@ -119,12 +131,12 @@
           "kind": "apps"
         },
         {
-          "enabled": true,
-          "limit": 12,
-          "id": "apps-sources",
-          "title": "المصادر",
+          "id": "apps-featured",
+          "title": "مختارات التطبيقات",
           "page": "apps",
-          "kind": "sources"
+          "kind": "featured",
+          "enabled": true,
+          "limit": 12
         },
         {
           "enabled": true,
@@ -141,6 +153,14 @@
           "title": "التطبيقات",
           "page": "apps",
           "kind": "apps"
+        },
+        {
+          "id": "games-featured",
+          "title": "مختارات الألعاب",
+          "page": "games",
+          "kind": "featured",
+          "enabled": true,
+          "limit": 12
         },
         {
           "enabled": true,
@@ -160,7 +180,8 @@
         "manifest_url": "",
         "notes": "",
         "html": ""
-      }
+      },
+      "catalog_profile": "zsign-public-v1"
     }
   },
   "categories": []
