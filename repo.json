@@ -6,7 +6,7 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 7,
+  "repo_revision_id": 8,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -242,8 +242,10 @@
         "sha256": "",
         "manifest_url": "",
         "notes": "",
-        "html": ""
-      }
+        "html": "",
+        "required": null
+      },
+      "experience_version": 2
     }
   },
   "sourceURL": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"

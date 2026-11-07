@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 7,
+  "repo_revision_id": 8,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -237,8 +237,10 @@
         "sha256": "",
         "manifest_url": "",
         "notes": "",
-        "html": ""
-      }
+        "html": "",
+        "required": null
+      },
+      "experience_version": 2
     }
   },
   "categories": []
