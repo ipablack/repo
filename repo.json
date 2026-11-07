@@ -6,7 +6,7 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 6,
+  "repo_revision_id": 7,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -14,7 +14,7 @@
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
-      "animation_style": "apple_minimal",
+      "animation_style": "twin_slash",
       "show_sign_feather": false,
       "duration_seconds": 3.2,
       "custom_code": "",
