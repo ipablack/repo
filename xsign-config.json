@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 20,
+  "repo_revision_id": 22,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -83,6 +83,11 @@
           "name": "Minoa’s Combined",
           "id": "xsign.iosboom.minoa",
           "url": "https://raw.githubusercontent.com/M1noa/Sideload-Tools/main/merged-apps-original-links-no-pal.json"
+        },
+        {
+          "name": "Chak over",
+          "id": "source-aefaf147-2b5a-400c-8272-1d184afc3263",
+          "url": "https://check0ver.net/index.php/en/iapps"
         }
       ]
     },
@@ -162,6 +167,13 @@
           "id": "xsign.iosboom.minoa",
           "name": "Minoa’s Combined",
           "url": "https://raw.githubusercontent.com/M1noa/Sideload-Tools/main/merged-apps-original-links-no-pal.json"
+        },
+        {
+          "id": "source-aefaf147-2b5a-400c-8272-1d184afc3263",
+          "name": "Chak over",
+          "url": "https://check0ver.net/index.php/en/iapps",
+          "enabled": true,
+          "format": "auto"
         }
       ],
       "sections": [
