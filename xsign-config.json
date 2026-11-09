@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 15,
+  "repo_revision_id": 18,
   "xsign_config": {
     "splash_screen": {
       "engine": "custom_css",
@@ -51,8 +51,8 @@
       "top_banner_enabled": false,
       "top_banner_text": "",
       "top_banner_url": "https://x-sign.web.app",
-      "cache_flush_id": 1,
-      "purge_sources_id": 1,
+      "cache_flush_id": 2,
+      "purge_sources_id": 2,
       "core_sources": [
         {
           "name": "IPA BLACK",
@@ -218,7 +218,7 @@
         "enabled": false,
         "latest_version": "2.0",
         "build_version": "",
-        "ipa_url": "",
+        "ipa_url": "https://github.com/ipablack/XSIGN/releases/download/V1/X-SIGN.ipa",
         "sha256": "",
         "manifest_url": "",
         "notes": "تحديث جديد واحترافي",
