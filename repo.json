@@ -6,14 +6,14 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 18,
+  "repo_revision_id": 19,
   "featuredApps": [],
   "categories": [],
   "news": [],
   "apps": [],
   "xsign_config": {
     "splash_screen": {
-      "engine": "custom_css",
+      "engine": "vector",
       "animation_style": "twin_slash",
       "show_sign_feather": false,
       "duration_seconds": 3,

@@ -5,10 +5,10 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 18,
+  "repo_revision_id": 19,
   "xsign_config": {
     "splash_screen": {
-      "engine": "custom_css",
+      "engine": "vector",
       "animation_style": "twin_slash",
       "show_sign_feather": false,
       "duration_seconds": 3,
