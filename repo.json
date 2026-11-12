@@ -6,11 +6,40 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 24,
+  "repo_revision_id": 25,
   "featuredApps": [],
   "categories": [],
   "news": [],
-  "apps": [],
+  "apps": [
+    {
+      "name": "XSign",
+      "bundleIdentifier": "com.ipablack.xsign",
+      "version": "1.0",
+      "buildVersion": "13",
+      "size": 14203702,
+      "sha256": "24965bf5841775b40516168ed1a09d6a58975e92aa73dd0cdd91c885287cce5b",
+      "iconSha256": "dbf8b403ec34f29b0b52317f0ed2e2715174dc724cf06a2d9b43343aa939042c",
+      "iconURL": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/icon.png",
+      "downloadURL": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/app.ipa",
+      "versionDate": "2026-11-12",
+      "releaseURL": "https://github.com/ipablack/repo/releases/tag/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15",
+      "skipAppStoreLookup": true,
+      "catalogID": "xsign.releases.com.ipablack.xsign",
+      "developerName": "IPA BLACK",
+      "versions": [
+        {
+          "version": "1.0",
+          "date": "2026-11-12",
+          "downloadURL": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/app.ipa",
+          "size": 14203702,
+          "sha256": "24965bf5841775b40516168ed1a09d6a58975e92aa73dd0cdd91c885287cce5b",
+          "buildVersion": "13",
+          "localizedDescription": "",
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
