@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 25,
+  "repo_revision_id": 28,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -39,8 +39,8 @@
       "min_build_version": ""
     },
     "security_locks": {
-      "allow_app_metadata_editing": true,
-      "lock_bundle_rename": false,
+      "allow_app_metadata_editing": false,
+      "lock_bundle_rename": true,
       "lock_icon_change": true,
       "lock_dylib_injection": true,
       "anti_vpn_proxy": false,
@@ -51,8 +51,8 @@
       "top_banner_enabled": false,
       "top_banner_text": "",
       "top_banner_url": "https://x-sign.web.app",
-      "cache_flush_id": 2,
-      "purge_sources_id": 2,
+      "cache_flush_id": 3,
+      "purge_sources_id": 3,
       "core_sources": [
         {
           "name": "IPA BLACK",
@@ -184,14 +184,6 @@
           "title": "الأخبار",
           "page": "today",
           "kind": "news"
-        },
-        {
-          "enabled": true,
-          "limit": 12,
-          "id": "apps-featured",
-          "title": "مختارات التطبيقات",
-          "page": "apps",
-          "kind": "featured"
         },
         {
           "enabled": true,
