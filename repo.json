@@ -6,7 +6,7 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 28,
+  "repo_revision_id": 31,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -53,11 +53,11 @@
       "vpn_warning_message": "عذراً، لا يمكن استخدام تطبيق X-Sign أو تحميل التطبيقات أثناء تشغيل VPN أو برامج مراقبة الشبكة (Proxy)."
     },
     "app_control": {
-      "top_banner_enabled": false,
-      "top_banner_text": "",
-      "top_banner_url": "https://x-sign.web.app",
-      "cache_flush_id": 3,
-      "purge_sources_id": 3,
+      "top_banner_enabled": true,
+      "top_banner_text": "سيتم نشر xsign قريبا",
+      "top_banner_url": "https://www.tiktok.com/@ipa.black",
+      "cache_flush_id": 4,
+      "purge_sources_id": 4,
       "core_sources": [
         {
           "name": "IPA BLACK",
