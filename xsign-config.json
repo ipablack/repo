@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://x-sign.web.app/icon.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 31,
+  "repo_revision_id": 33,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -75,11 +75,6 @@
           "url": "https://repository.apptesters.org/"
         },
         {
-          "name": "IPAOMTK Apps",
-          "id": "xsign.iosboom.ipaomtk",
-          "url": "https://raw.githubusercontent.com/drphe/KhoIPA/main/upload/ipaomtk.json"
-        },
-        {
           "name": "Minoa’s Combined",
           "id": "xsign.iosboom.minoa",
           "url": "https://raw.githubusercontent.com/M1noa/Sideload-Tools/main/merged-apps-original-links-no-pal.json"
@@ -146,13 +141,6 @@
           "id": "xsign.iosboom.nabzclan",
           "name": "Nabzclan",
           "url": "https://appstore.nabzclan.vip/repos/scarlet.php"
-        },
-        {
-          "enabled": true,
-          "format": "auto",
-          "id": "xsign.iosboom.ipaomtk",
-          "name": "IPAOMTK Apps",
-          "url": "https://raw.githubusercontent.com/drphe/KhoIPA/main/upload/ipaomtk.json"
         },
         {
           "enabled": false,
