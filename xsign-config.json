@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 38,
+  "repo_revision_id": 39,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -43,7 +43,7 @@
       "lock_bundle_rename": true,
       "lock_icon_change": true,
       "lock_dylib_injection": true,
-      "anti_vpn_proxy": true,
+      "anti_vpn_proxy": false,
       "require_online_handshake": false,
       "vpn_warning_message": "عذراً، لا يمكن استخدام تطبيق X-Sign أو تحميل التطبيقات أثناء تشغيل VPN أو برامج مراقبة الشبكة (Proxy)."
     },
