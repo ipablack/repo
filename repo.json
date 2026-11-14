@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 39,
+  "repo_revision_id": 40,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -31,7 +31,7 @@
       "appearance": "system"
     },
     "maintenance": {
-      "enabled": true,
+      "enabled": false,
       "title": "التطبيق قيد الصيانة",
       "message": "نقوم حالياً بتحديث الخدمات، يرجى المحاولة لاحقاً.",
       "button_url": "https://x-sign.web.app"
