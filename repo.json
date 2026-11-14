@@ -6,7 +6,7 @@
   "iconURL": "https://x-sign.web.app/icon.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 36,
+  "repo_revision_id": 37,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -48,7 +48,7 @@
       "lock_bundle_rename": true,
       "lock_icon_change": true,
       "lock_dylib_injection": true,
-      "anti_vpn_proxy": false,
+      "anti_vpn_proxy": true,
       "require_online_handshake": false,
       "vpn_warning_message": "عذراً، لا يمكن استخدام تطبيق X-Sign أو تحميل التطبيقات أثناء تشغيل VPN أو برامج مراقبة الشبكة (Proxy)."
     },
