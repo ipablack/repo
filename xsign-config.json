@@ -3,9 +3,9 @@
   "identifier": "xsign.core.owned",
   "subtitle": "سورس xsign الرسمي",
   "description": "تطبيقات وألعاب xsign",
-  "iconURL": "https://x-sign.web.app/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 37,
+  "repo_revision_id": 38,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -60,7 +60,7 @@
           "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
         },
         {
-          "name": "ipasoon",
+          "name": "IPA SOON",
           "id": "xsign.core.primary",
           "url": "https://appiraq.com/source.php?action=getAll"
         },
@@ -114,7 +114,7 @@
           "enabled": true,
           "format": "auto",
           "id": "xsign.core.primary",
-          "name": "ipasoon",
+          "name": "IPA SOON",
           "url": "https://appiraq.com/source.php?action=getAll"
         },
         {
@@ -169,56 +169,64 @@
       ],
       "sections": [
         {
-          "enabled": true,
           "limit": 12,
+          "enabled": true,
           "id": "today-news",
           "title": "الأخبار",
           "page": "today",
           "kind": "news"
         },
         {
-          "enabled": true,
           "limit": 12,
+          "enabled": true,
           "id": "apps-categories",
           "title": "التصنيفات",
           "page": "apps",
           "kind": "categories"
         },
         {
-          "enabled": true,
           "limit": 60,
+          "enabled": true,
           "id": "apps-list",
           "title": "التطبيقات",
           "page": "apps",
           "kind": "apps"
         },
         {
-          "enabled": true,
           "limit": 12,
+          "id": "games-categories",
+          "title": "أقسام الألعاب",
+          "page": "games",
+          "kind": "categories",
+          "enabled": true
+        },
+        {
+          "limit": 12,
+          "enabled": true,
           "id": "games-featured",
           "title": "مختارات الألعاب",
           "page": "games",
           "kind": "featured"
         },
         {
-          "enabled": true,
           "limit": 60,
+          "enabled": true,
           "id": "games-list",
           "title": "الألعاب",
           "page": "games",
           "kind": "apps"
         },
         {
-          "enabled": true,
           "limit": 2,
+          "enabled": true,
           "id": "today-featured",
           "title": "مختارات اليوم",
           "page": "today",
           "kind": "featured"
         },
         {
-          "enabled": true,
           "limit": 60,
+          "enabled": true,
           "id": "today-apps",
           "title": "جديد المتجر",
           "page": "today",
