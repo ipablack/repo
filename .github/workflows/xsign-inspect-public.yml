@@ -1,0 +1,145 @@
+name: XSign — Inspect public update IPA
+
+on:
+  workflow_dispatch:
+    inputs:
+      ipa_url:
+        description: Public IPA release link
+        required: true
+        type: string
+      request_id:
+        description: Studio inspection request ID
+        required: true
+        type: string
+      bundle_id:
+        description: Expected bundle identifier
+        required: true
+        type: string
+      build_request_id:
+        description: Expected Studio build request ID, if any
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: github.repository == 'ipablack/repo' && github.ref == 'refs/heads/main' && !github.event.repository.private
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Inspect the exact release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IPA_URL: ${{ inputs.ipa_url }}
+          REQUEST_ID: ${{ inputs.request_id }}
+          BUNDLE_ID: ${{ inputs.bundle_id }}
+          BUILD_REQUEST_ID: ${{ inputs.build_request_id }}
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, os, plistlib, re, subprocess
+          from pathlib import Path
+          from tempfile import TemporaryDirectory
+          from zipfile import ZipFile
+
+          repo = "ipablack/repo"
+          link = os.environ["IPA_URL"]
+          request = os.environ["REQUEST_ID"]
+          bundle = os.environ["BUNDLE_ID"]
+          expected_build = os.environ["BUILD_REQUEST_ID"]
+          if not re.fullmatch(r"[a-f0-9]{32}", request):
+              raise SystemExit("Invalid inspection request ID.")
+
+          def gh(*args, data=None):
+              return subprocess.run(
+                  ["gh", *args], input=data, text=True, capture_output=True, check=True
+              ).stdout
+
+          def contains_request(value):
+              if isinstance(value, dict):
+                  return any(contains_request(v) for v in value.values())
+              if isinstance(value, list):
+                  return any(contains_request(v) for v in value)
+              return value == expected_build
+
+          report = {"requestID": request, "ipaURL": link}
+          try:
+              match = re.fullmatch(
+                  r"https://github\.com/ipablack/repo/releases/download/"
+                  r"([A-Za-z0-9][A-Za-z0-9._-]{0,127})/"
+                  r"([A-Za-z0-9][A-Za-z0-9._-]{0,180}\.ipa)", link, re.I
+              )
+              if not match:
+                  raise ValueError("استخدم رابط IPA من Releases العامة في ipablack/repo.")
+              if expected_build and not re.fullmatch(r"[a-f0-9]{32}", expected_build):
+                  raise ValueError("معرّف بناء Studio غير صالح.")
+              tag, name = match.groups()
+              release = json.loads(gh("api", f"repos/{repo}/releases/tags/{tag}"))
+              asset = next((a for a in release["assets"]
+                            if a["name"] == name and a["state"] == "uploaded"), None)
+              if release["draft"] or not asset:
+                  raise ValueError("ملف IPA غير موجود في إصدار منشور.")
+              if not 0 < asset["size"] < 2 * 1024**3:
+                  raise ValueError("حجم ملف IPA غير صالح.")
+
+              with TemporaryDirectory() as folder:
+                  ipa = Path(folder) / "update.ipa"
+                  gh("release", "download", tag, "--repo", repo, "--pattern", name, "--output", str(ipa))
+                  with ipa.open("rb") as stream:
+                      digest = hashlib.file_digest(stream, "sha256").hexdigest()
+                  if ipa.stat().st_size != asset["size"] or (
+                      asset.get("digest") and asset["digest"].lower() != f"sha256:{digest}"
+                  ):
+                      raise ValueError("بصمة الملف أو حجمه يختلف عن الإصدار المنشور.")
+
+                  with ZipFile(ipa) as archive:
+                      main = [f for f in archive.infolist()
+                              if re.fullmatch(r"Payload/[^/]+\.app/Info\.plist", f.filename)]
+                      if len(main) != 1 or main[0].file_size > 1024 * 1024:
+                          raise ValueError("تعذّر العثور على Info.plist للتطبيق الرئيسي.")
+                      info = plistlib.loads(archive.read(main[0]))
+                      actual_bundle = info["CFBundleIdentifier"]
+                      if actual_bundle.lower() != bundle.lower():
+                          raise ValueError("البندل داخل IPA يختلف عن البندل المحدد في Studio.")
+                      if expected_build and not contains_request(info):
+                          root = main[0].filename.removesuffix("Info.plist")
+                          metadata = [
+                              f for f in archive.infolist()
+                              if f.filename.startswith(root)
+                              and re.fullmatch(r"[^/]*(xsign|build)[^/]*\.json",
+                                               f.filename[len(root):], re.I)
+                              and f.file_size <= 64 * 1024
+                          ][:12]
+                          matched = False
+                          for item in metadata:
+                              try:
+                                  matched = contains_request(json.loads(archive.read(item)))
+                              except (ValueError, UnicodeError):
+                                  continue
+                              if matched:
+                                  break
+                          if not matched:
+                              raise ValueError("لم أجد معرّف بناء Studio المطلوب داخل هذا الـIPA. جرّب ملف البناء المرتبط بطلبك.")
+
+              report.update(
+                  isXSign=True,
+                  appName=info.get("CFBundleDisplayName") or info.get("CFBundleName") or actual_bundle,
+                  bundleIdentifier=actual_bundle,
+                  version=info["CFBundleShortVersionString"],
+                  buildVersion=info["CFBundleVersion"],
+                  buildRequestID=expected_build,
+                  sha256=digest,
+              )
+          except ValueError as error:
+              report["error"] = str(error)
+          except Exception:
+              report["error"] = "تعذّر تنزيل IPA من GitHub أو قراءة بيانات التطبيق."
+
+          content = base64.b64encode(json.dumps(report, ensure_ascii=False).encode()).decode()
+          gh("api", "--method", "PUT",
+             f"repos/{repo}/contents/.xsign-inspect/{request}.json", "--input", "-",
+             data=json.dumps({"branch": "main", "message": "Record XSign update inspection", "content": content}))
+          if report.get("error"):
+              raise SystemExit(report["error"])
+          PY
