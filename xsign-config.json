@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 41,
+  "repo_revision_id": 42,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -238,7 +238,7 @@
           "enabled": false,
           "latest_version": "",
           "build_version": "",
-          "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/v2.9.0.1/X-SIGN.ipa",
+          "ipa_url": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/X-SIGN.ipa",
           "sha256": "",
           "manifest_url": "",
           "notes": "",
