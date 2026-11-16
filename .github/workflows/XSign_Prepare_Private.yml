@@ -1,0 +1,424 @@
+# Repository: ipablack/XSIGN (private)
+# Path: .github/workflows/xsign-source-sync.yml
+name: XSign — Prepare private repository
+
+'on':
+  workflow_dispatch:
+    inputs:
+      import_existing_catalog:
+        description: Copy catalogue metadata from ipablack/repo if missing
+        type: boolean
+        default: true
+      worker_origin:
+        description: Exact HTTPS Worker origin (leave blank if not created yet)
+        type: string
+        required: false
+      source_id:
+        description: Only for Studio to synchronize an already published source
+        type: string
+        required: false
+
+permissions: {}
+
+jobs:
+  prepare:
+    if: ${{ github.repository == 'ipablack/XSIGN' && github.event.repository.private && github.ref == 'refs/heads/main' && inputs.source_id == '' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: xsign-prepare-private-catalog
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Prepare missing files and import the catalogue
+        shell: bash
+        env:
+          XSIGN_IMPORT_LEGACY: ${{ inputs.import_existing_catalog }}
+          XSIGN_WORKER_ORIGIN: ${{ inputs.worker_origin }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PYTHON'
+          EMBEDDED = '''
+          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'''
+          
+          import base64
+          import io
+          import json
+          import os
+          from pathlib import Path
+          import re
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urlsplit
+          from urllib.request import urlopen
+          from zipfile import ZipFile
+          
+          LEGACY = 'https://raw.githubusercontent.com/ipablack/repo/refs/heads/main/'
+          CATALOG_LIMIT = 32 * 1024 * 1024
+          CONFIG_LIMIT = 512 * 1024
+          CONFIG_KEYS = (
+              'name', 'identifier', 'subtitle', 'description', 'iconURL', 'tintColor',
+              'repo_revision_id', 'xsign_config', 'categories',
+          )
+          WORKER_REQUIRED = (
+              'CLOUDFLARE_WORKER/wrangler.toml', 'CLOUDFLARE_WORKER/worker.mjs',
+              'CLOUDFLARE_WORKER/make_device_access.py', 'Tools/sync_protected_source.py',
+              'repo.example.json',
+          )
+          WRANGLER = 'CLOUDFLARE_WORKER/wrangler.toml'
+          
+          
+          def read_public_json(name, limit):
+              with urlopen(LEGACY + name, timeout=15) as response:
+                  if response.geturl() != LEGACY + name:
+                      raise ValueError('Unexpected repository redirect.')
+                  raw = response.read(limit + 1)
+              return parse_document(raw, limit)
+          
+          
+          def parse_document(raw, limit):
+              if len(raw) > limit:
+                  raise ValueError('Catalogue file exceeds the size limit.')
+              data = json.loads(raw.decode('utf-8-sig'))
+              if not isinstance(data, dict):
+                  raise ValueError('Expected a catalogue object.')
+              return data
+          
+          
+          def as_json(data, limit):
+              raw = (json.dumps(data, ensure_ascii=False, indent=2) + '\n').encode()
+              if len(raw) > limit:
+                  raise ValueError('Formatted catalogue file exceeds the size limit.')
+              return raw
+          
+          
+          def catalogue_seed(paths):
+              if paths['xsign-config.json'].exists():
+                  print('Existing xsign-config.json kept. No catalogue migration performed.')
+                  return {}
+              if paths['repo.json'].exists():
+                  print('Existing private repo.json kept. Using it for the configuration.')
+                  catalogue = parse_document(paths['repo.json'].read_bytes(), CATALOG_LIMIT)
+              elif os.environ['XSIGN_IMPORT_LEGACY'].lower() == 'true':
+                  print('Reading catalogue metadata from ipablack/repo.')
+                  catalogue = read_public_json('repo.json', CATALOG_LIMIT)
+                  try:
+                      projection = read_public_json('xsign-config.json', CONFIG_LIMIT)
+                  except HTTPError as error:
+                      if error.code != 404:
+                          raise
+                  else:
+                      revision = projection.get('repo_revision_id')
+                      catalog_revision = catalogue.get('repo_revision_id', 0)
+                      if type(revision) is int and (type(catalog_revision) is not int or revision >= catalog_revision):
+                          catalogue.update({key: projection[key] for key in CONFIG_KEYS if key in projection})
+              else:
+                  print('Catalogue import disabled. Publish the initial catalogue from Studio.')
+                  return {}
+              if not isinstance(catalogue.get('apps'), list):
+                  raise ValueError('Expected an app list in repo.json.')
+              if not isinstance(catalogue.get('xsign_config'), dict):
+                  raise ValueError('No XSign configuration found. Publish from Studio.')
+              revision = catalogue.get('repo_revision_id')
+              if type(revision) is not int or revision < 1:
+                  catalogue['repo_revision_id'] = 1
+              config = {key: catalogue[key] for key in CONFIG_KEYS if key in catalogue}
+              result = {'xsign-config.json': as_json(config, CONFIG_LIMIT)}
+              if not paths['repo.json'].exists():
+                  result['repo.json'] = as_json(catalogue, CATALOG_LIMIT)
+              return result
+          
+          
+          def validate_path(name):
+              path = Path(name)
+              for component in (path, *path.parents):
+                  if component.is_symlink():
+                      raise SystemExit('A setup destination is a symbolic link: ' + name)
+              if path.exists() and not path.is_file():
+                  raise SystemExit('A setup destination is not a file: ' + name)
+              return path
+          
+          
+          files = {}
+          with ZipFile(io.BytesIO(base64.b64decode(EMBEDDED))) as archive:
+              for name in WORKER_REQUIRED:
+                  files[name] = archive.read(name)
+          
+          provided_origin = os.environ['XSIGN_WORKER_ORIGIN'].strip()
+          if provided_origin:
+              url = urlsplit(provided_origin)
+              host = url.hostname or ''
+              if (url.scheme != 'https' or url.path not in ('', '/') or url.query or url.fragment
+                      or url.netloc.lower() != host
+                      or not re.fullmatch(r'(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}', host)):
+                  raise SystemExit('Enter the HTTPS Worker origin without a path, port or credentials.')
+              origin = 'https://' + host
+              files[WRANGLER] = files[WRANGLER].replace(
+                  b'https://xsign-protected-catalog.REPLACE-ME.workers.dev', origin.encode())
+              if not host.endswith('.workers.dev'):
+                  files[WRANGLER] = files[WRANGLER].replace(b'workers_dev = true', b'workers_dev = false')
+          
+          paths = {name: validate_path(name) for name in (*files, 'repo.json', 'xsign-config.json')}
+          catalogue_warning = ''
+          try:
+              files.update(catalogue_seed(paths))
+          except (OSError, URLError, ValueError, TimeoutError) as error:
+              catalogue_warning = (
+                  'Setup files were prepared, but the catalogue was not imported (' + type(error).__name__ +
+                  '). Verify ipablack/repo/main/repo.json or import and publish it through Studio.'
+              )
+          
+          for name, data in files.items():
+              path = paths[name]
+              if path.exists():
+                  print('Kept ' + name)
+                  continue
+              path.parent.mkdir(parents=True, exist_ok=True)
+              with path.open('xb') as output:
+                  output.write(data)
+              print('Added ' + name)
+          
+          if catalogue_warning:
+              print('::warning::' + catalogue_warning)
+          print('Catalogue migration copies JSON only. Existing public files and release assets are untouched.')
+          PYTHON
+          git add -- CLOUDFLARE_WORKER/wrangler.toml CLOUDFLARE_WORKER/worker.mjs CLOUDFLARE_WORKER/make_device_access.py Tools/sync_protected_source.py repo.example.json
+          for path in repo.json xsign-config.json; do
+            if [[ -f "$path" ]]; then git add -- "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "The private repository already has these files."
+            exit 0
+          fi
+          git -c user.name=xsign-setup -c user.email=xsign-setup@users.noreply.github.com commit -m "Prepare private XSign catalogue"
+          git push origin HEAD:main
+
+  sync-source:
+    if: ${{ github.repository == 'ipablack/XSIGN' && github.event.repository.private && github.ref == 'refs/heads/main' && inputs.source_id != '' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: xsign-source-sync-${{ inputs.source_id }}
+      cancel-in-progress: false
+    env:
+      XSIGN_SOURCE_ID: ${{ inputs.source_id }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Sync one published source
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$XSIGN_SOURCE_ID" =~ ^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$ ]]; then
+            echo "::error::Invalid published source identifier."
+            exit 1
+          fi
+          if [[ ! -f Tools/sync_protected_source.py ]]; then
+            echo "::error::Run XSign — Prepare private repository with source_id blank first."
+            exit 1
+          fi
+          output="sources/$XSIGN_SOURCE_ID.json"
+          if [[ -L sources || -L "$output" ]]; then
+            echo "::error::The source output cannot be a symbolic link."
+            exit 1
+          fi
+          python3 Tools/sync_protected_source.py --source-id "$XSIGN_SOURCE_ID" --repository "$GITHUB_REPOSITORY"
+          git add -- "$output"
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name=xsign-source-sync -c user.email=xsign-source-sync@users.noreply.github.com commit -m "Sync private XSign source"
+          git push origin HEAD:main
