@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 53,
+  "repo_revision_id": 55,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -241,15 +241,15 @@
         "xsign": {
           "enabled": false,
           "latest_version": "1.0",
-          "build_version": "33",
-          "ipa_url": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/X-SIGN.ipa",
-          "sha256": "73fce220cc81369e40cb0eae72af736d9edb607a06056d6c03c02f70307c8557",
+          "build_version": "47",
+          "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45635236898-1/X-SIGN.ipa",
+          "sha256": "0f741c20617c85826ca709a284c2416bb671a803d8b315c47e358153832320a1",
           "manifest_url": "",
           "notes": "",
           "html": "",
           "bundle_identifier": "xsign",
           "app_name": "Xsign",
-          "build_request_id": "682a2bea42b7299ee60c16b7944a970b"
+          "build_request_id": "09f1933c7204b9f12f0c4bbf60cbdca0"
         },
         "com.ipablack.xsign": {
           "enabled": false,
@@ -267,15 +267,15 @@
       "update": {
         "enabled": false,
         "latest_version": "1.0",
-        "build_version": "33",
-        "ipa_url": "https://github.com/ipablack/repo/releases/download/ipa-com.ipablack.xsign-24965bf58417-dfcc7c46862d07df8b15/X-SIGN.ipa",
-        "sha256": "73fce220cc81369e40cb0eae72af736d9edb607a06056d6c03c02f70307c8557",
+        "build_version": "47",
+        "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45635236898-1/X-SIGN.ipa",
+        "sha256": "0f741c20617c85826ca709a284c2416bb671a803d8b315c47e358153832320a1",
         "manifest_url": "",
         "notes": "",
         "html": "",
         "bundle_identifier": "xsign",
         "app_name": "Xsign",
-        "build_request_id": "682a2bea42b7299ee60c16b7944a970b"
+        "build_request_id": "09f1933c7204b9f12f0c4bbf60cbdca0"
       },
       "today_source_ids": [
         "xsign.core.owned"
