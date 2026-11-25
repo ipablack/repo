@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 46,
+  "repo_revision_id": 47,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -33,6 +33,8 @@
     "maintenance": {
       "enabled": false,
       "title": "التطبيق قيد الصيانة",
+      "title_i18n": {},
+      "message_i18n": {},
       "message": "نقوم حالياً بتحديث الخدمات، يرجى المحاولة لاحقاً.",
       "button_url": "https://x-sign.web.app"
     },
@@ -44,17 +46,18 @@
       "min_build_version": ""
     },
     "security_locks": {
-      "allow_app_metadata_editing": false,
-      "lock_bundle_rename": true,
-      "lock_icon_change": true,
-      "lock_dylib_injection": true,
-      "anti_vpn_proxy": false,
+      "allow_app_metadata_editing": true,
+      "lock_bundle_rename": false,
+      "lock_icon_change": false,
+      "lock_dylib_injection": false,
+      "anti_vpn_proxy": true,
       "require_online_handshake": false,
       "vpn_warning_message": "عذراً، لا يمكن استخدام تطبيق X-Sign أو تحميل التطبيقات أثناء تشغيل VPN أو برامج مراقبة الشبكة (Proxy)."
     },
     "app_control": {
       "top_banner_enabled": false,
       "top_banner_text": "سيتم نشر xsign قريبا",
+      "top_banner_text_i18n": {},
       "top_banner_url": "https://www.tiktok.com/@ipa.black",
       "cache_flush_id": 4,
       "purge_sources_id": 4,
@@ -272,6 +275,7 @@
           "required": null
         }
       },
+      "signing_libraries": [],
       "update": {
         "enabled": false,
         "latest_version": "1.0",
