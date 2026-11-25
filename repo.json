@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 48,
+  "repo_revision_id": 53,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -68,16 +68,6 @@
           "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
         },
         {
-          "name": "IPA SOON",
-          "id": "xsign.core.primary",
-          "url": "https://appiraq.com/source.php?action=getAll"
-        },
-        {
-          "name": "متجر Zsign الرسمي",
-          "id": "xsign.core.zsign",
-          "url": "https://appiraq.com/han.json"
-        },
-        {
           "name": "AppTesters",
           "id": "xsign.iosboom.apptesters",
           "url": "https://repository.apptesters.org/"
@@ -91,6 +81,11 @@
           "name": "Chak over",
           "id": "source-aefaf147-2b5a-400c-8272-1d184afc3263",
           "url": "https://check0ver.net/index.php/en/iapps"
+        },
+        {
+          "name": "iOSBoom Public",
+          "id": "xsign.iosboom.public",
+          "url": "https://raw.githubusercontent.com/ipablack/repo/main/sources/iosboom-public.json"
         }
       ]
     },
@@ -117,20 +112,6 @@
           "url": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json",
           "enabled": true,
           "format": "auto"
-        },
-        {
-          "enabled": true,
-          "format": "auto",
-          "id": "xsign.core.primary",
-          "name": "IPA SOON",
-          "url": "https://appiraq.com/source.php?action=getAll"
-        },
-        {
-          "enabled": true,
-          "format": "auto",
-          "id": "xsign.core.zsign",
-          "name": "متجر Zsign الرسمي",
-          "url": "https://appiraq.com/han.json"
         },
         {
           "enabled": false,
@@ -173,6 +154,13 @@
           "id": "source-aefaf147-2b5a-400c-8272-1d184afc3263",
           "name": "Chak over",
           "url": "https://check0ver.net/index.php/en/iapps"
+        },
+        {
+          "id": "xsign.iosboom.public",
+          "name": "iOSBoom Public",
+          "format": "auto",
+          "enabled": true,
+          "url": "https://raw.githubusercontent.com/ipablack/repo/main/sources/iosboom-public.json"
         }
       ],
       "sections": [
@@ -289,6 +277,9 @@
         "app_name": "Xsign",
         "build_request_id": "682a2bea42b7299ee60c16b7944a970b"
       },
+      "today_source_ids": [
+        "xsign.core.owned"
+      ],
       "compatibility_update_bundle": "xsign"
     },
     "usage_stats": {
