@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 59,
+  "repo_revision_id": 62,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -239,18 +239,18 @@
       ],
       "bundle_updates": {
         "xsign": {
-          "enabled": false,
+          "enabled": true,
           "latest_version": "1.0",
-          "build_version": "47",
-          "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45635236898-1/X-SIGN.ipa",
-          "sha256": "0f741c20617c85826ca709a284c2416bb671a803d8b315c47e358153832320a1",
+          "build_version": "61",
+          "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45824211380-1/X-SIGN.ipa",
+          "sha256": "798b091278d74c86e100c01f451bb0c05d9b698aac8f4b5d4fc09c73568cea9c",
           "manifest_url": "",
           "notes": "",
           "html": "",
           "bundle_identifier": "xsign",
           "app_name": "Xsign",
-          "build_request_id": "09f1933c7204b9f12f0c4bbf60cbdca0",
-          "required": false,
+          "build_request_id": "cbe5d9083646cd7cfdafe8a1146594be",
+          "required": true,
           "required_policy": "approved"
         },
         "com.ipablack.xsign": {
@@ -267,18 +267,18 @@
       },
       "signing_libraries": [],
       "update": {
-        "enabled": false,
+        "enabled": true,
         "latest_version": "1.0",
-        "build_version": "47",
-        "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45635236898-1/X-SIGN.ipa",
-        "sha256": "0f741c20617c85826ca709a284c2416bb671a803d8b315c47e358153832320a1",
+        "build_version": "61",
+        "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45824211380-1/X-SIGN.ipa",
+        "sha256": "798b091278d74c86e100c01f451bb0c05d9b698aac8f4b5d4fc09c73568cea9c",
         "manifest_url": "",
         "notes": "",
         "html": "",
         "bundle_identifier": "xsign",
         "app_name": "Xsign",
-        "build_request_id": "09f1933c7204b9f12f0c4bbf60cbdca0",
-        "required": false,
+        "build_request_id": "cbe5d9083646cd7cfdafe8a1146594be",
+        "required": true,
         "required_policy": "approved"
       },
       "today_source_ids": [
@@ -289,7 +289,8 @@
     "usage_stats": {
       "enabled": false,
       "endpoint": ""
-    }
+    },
+    "push_endpoint": ""
   },
   "sourceURL": "https://raw.githubusercontent.com/ipablack/repo/main/repo.json"
 }
