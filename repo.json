@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 69,
+  "repo_revision_id": 71,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -239,7 +239,7 @@
       ],
       "bundle_updates": {
         "xsign": {
-          "enabled": false,
+          "enabled": true,
           "latest_version": "1.0",
           "build_version": "67",
           "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45992108076-1/X-SIGN.ipa",
@@ -267,7 +267,7 @@
       },
       "signing_libraries": [],
       "update": {
-        "enabled": false,
+        "enabled": true,
         "latest_version": "1.0",
         "build_version": "67",
         "ipa_url": "https://github.com/ipablack/X-SIGN/releases/download/xsign-build-45992108076-1/X-SIGN.ipa",
