@@ -6,7 +6,7 @@
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "website": "https://x-sign.web.app",
   "tintColor": "#005BBB",
-  "repo_revision_id": 78,
+  "repo_revision_id": 80,
   "featuredApps": [],
   "categories": [],
   "news": [],
@@ -251,7 +251,7 @@
           "app_name": "Xsign",
           "build_request_id": "cbe5d9083646cd7cfdafe8a1146594be",
           "required": true,
-          "required_policy": "approved"
+          "required_policy": "approved_origin"
         },
         "com.ipablack.xsign": {
           "enabled": false,
@@ -279,7 +279,7 @@
         "app_name": "Xsign",
         "build_request_id": "cbe5d9083646cd7cfdafe8a1146594be",
         "required": true,
-        "required_policy": "approved"
+        "required_policy": "approved_origin"
       },
       "today_source_ids": [
         "xsign.core.owned"
