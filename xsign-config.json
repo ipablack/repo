@@ -5,7 +5,7 @@
   "description": "تطبيقات وألعاب xsign",
   "iconURL": "https://raw.githubusercontent.com/ipablack/repo/main/assets/icons/img_efd3b58e-060b-48ee-bf79-7a9e7acc7675.png",
   "tintColor": "#005BBB",
-  "repo_revision_id": 87,
+  "repo_revision_id": 88,
   "xsign_config": {
     "splash_screen": {
       "engine": "vector",
@@ -236,15 +236,15 @@
         "xsign": {
           "enabled": true,
           "latest_version": "1.0",
-          "build_version": "80",
-          "ipa_url": "https://github.com/ipablack/repo/releases/download/xsign-update-81e6e3965de5393bec8e57bf8d708e702e810c394cdd9e720964f36ca48ac7c5/X-SIGN.ipa",
-          "sha256": "81e6e3965de5393bec8e57bf8d708e702e810c394cdd9e720964f36ca48ac7c5",
+          "build_version": "83",
+          "ipa_url": "https://github.com/ipablack/repo/releases/download/xsign-update-292270614e31af2ed4980e215299497a781985fffce25501b568bcb11b3f84ae/X-SIGN.ipa",
+          "sha256": "292270614e31af2ed4980e215299497a781985fffce25501b568bcb11b3f84ae",
           "manifest_url": "",
           "notes": "",
           "html": "",
           "bundle_identifier": "xsign",
           "app_name": "Xsign",
-          "build_request_id": "f739ea883d09445134eb87b598c382eb",
+          "build_request_id": "18931ff387b1586e27b1ec76c3c08a55",
           "required": true,
           "required_policy": "minimum"
         },
@@ -264,15 +264,15 @@
       "update": {
         "enabled": true,
         "latest_version": "1.0",
-        "build_version": "80",
-        "ipa_url": "https://github.com/ipablack/repo/releases/download/xsign-update-81e6e3965de5393bec8e57bf8d708e702e810c394cdd9e720964f36ca48ac7c5/X-SIGN.ipa",
-        "sha256": "81e6e3965de5393bec8e57bf8d708e702e810c394cdd9e720964f36ca48ac7c5",
+        "build_version": "83",
+        "ipa_url": "https://github.com/ipablack/repo/releases/download/xsign-update-292270614e31af2ed4980e215299497a781985fffce25501b568bcb11b3f84ae/X-SIGN.ipa",
+        "sha256": "292270614e31af2ed4980e215299497a781985fffce25501b568bcb11b3f84ae",
         "manifest_url": "",
         "notes": "",
         "html": "",
         "bundle_identifier": "xsign",
         "app_name": "Xsign",
-        "build_request_id": "f739ea883d09445134eb87b598c382eb",
+        "build_request_id": "18931ff387b1586e27b1ec76c3c08a55",
         "required": true,
         "required_policy": "minimum"
       },
